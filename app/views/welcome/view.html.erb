@@ -34,7 +34,7 @@
         alert("Load Error: " + errorMsg);
         });
     }
-    
+
     function initialize() {
         var options = {
             'document' : 'urn:' + urn,
@@ -50,11 +50,11 @@
             loadDocument(viewer, options.document);
         });
     }
-    
+
     initialize();
     </script>
 </head>
-<body onload="initialize();">  
+<body onload="initialize();">
 
     <div id="nav-bar" class="navbar navbar-default app-navbar">
       <div class="container">
@@ -65,7 +65,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand trackit nomargin" href="/"><img width="160px;" src="../Autodesk_logo.png"/></a>
+          <a class="navbar-brand trackit nomargin" href="/"><img width="160px;" src="../BuroHappold_logo.png"/></a>
         </div>
         <div class="navbar-nav-large navbar-collapse collapse" id="navbar-user">
           <ul class="nav navbar-nav">
@@ -89,7 +89,7 @@
 	<% elsif  @status == "noviewable" %>
 		<h4> Sorry this user doens't have a public viewable! </h4>
 	<% elsif  @status == "judge" %>
-		<h4> User Name: <%= @user.name %> &nbsp;&nbsp;&nbsp; Model Title: <%= @model.title %>  </h4> 
+		<h4> User Name: <%= @user.name %> &nbsp;&nbsp;&nbsp; Model Title: <%= @model.title %>  </h4>
 		<div id="viewer" style="position:absolute; width:90%; height:80%;"></div>
 	<% else %>
 		<% if @mods.count == 0 %>

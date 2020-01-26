@@ -34,7 +34,7 @@
         alert("Load Error: " + errorMsg);
         });
     }
-    
+
     function initialize() {
         var options = {
             'document' : 'urn:' + urn,
@@ -50,7 +50,7 @@
             loadDocument(viewer, options.document);
         });
     }
-    
+
     initialize();
     </script>
 </head>
@@ -64,7 +64,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand trackit nomargin" href="/"><img width="160px;" src="../Autodesk_logo.png"/></a>
+          <a class="navbar-brand trackit nomargin" href="/"><img width="160px;" src="../BuroHappold_logo.png"/></a>
         </div>
         <div class="navbar-nav-large navbar-collapse collapse" id="navbar-user">
           <ul class="nav navbar-nav">
@@ -100,7 +100,7 @@
             <h4> You currently have no uploaded models. Translate and store URNs by going to <a href=<%= '/upload'%> style="text-decoration: none"> Upload </a> </h4>
         <% elsif @status == "noviewable" %>
             <h4> You currently have no viewable. Translate and store URNs by going to <a href=<%= '/upload'%> style="text-decoration: none"> Upload </a> </h4>
-        
+
         <% end %>
 </div>
 </body>
