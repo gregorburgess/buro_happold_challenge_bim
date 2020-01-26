@@ -1,17 +1,17 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved 
+// Copyright (c) Autodesk, Inc. All rights reserved
 // Written by Philippe Leefsma 2014 - ADN/Developer Technical Services
 //
 // Permission to use, copy, modify, and distribute this software in
-// object code form for any purpose and without fee is hereby granted, 
-// provided that the above copyright notice appears in all copies and 
+// object code form for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appears in all copies and
 // that both that copyright notice and the limited warranty and
-// restricted rights notice below appear in all supporting 
+// restricted rights notice below appear in all supporting
 // documentation.
 //
-// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. 
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS.
 // AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
-// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC. 
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC.
 // DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
 // UNINTERRUPTED OR ERROR FREE.
 ///////////////////////////////////////////////////////////////////////////////
@@ -30,14 +30,14 @@ Autodesk.ADN.Toolkit.ViewData = Autodesk.ADN.Toolkit.ViewData || {};
 // Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient
 //
 // Parameters:
-//      baseUrl: url of view and data API service, 
+//      baseUrl: url of view and data API service,
 //               for production environment, it is 'https://developer.api.autodesk.com'
-//      accessTokenOrUrl :  An url which returns the access token in JSON foramt, 
+//      accessTokenOrUrl :  An url which returns the access token in JSON foramt,
 //              for example: http://still-spire-1606.herokuapp.com/api/rawtoken,
 //              it returns token  like :
 //                  {"token_type":"Bearer",
 //                   "expires_in":1799,
-//                    "access_token":"nTeOdsiNRckNbiBF7lzdEZ3yjHRx"} 
+//                    "access_token":"nTeOdsiNRckNbiBF7lzdEZ3yjHRx"}
 ///////////////////////////////////////////////////////////////////////////////
 Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
     baseUrl,
@@ -131,7 +131,7 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
 
     ///////////////////////////////////////////////////////////////////////////
     // Set the cookie upon server response
-    // Subsequent http requests to this domain  
+    // Subsequent http requests to this domain
     // will automatically send the cookie for authentication
     //
     ///////////////////////////////////////////////////////////////////////////
@@ -152,16 +152,16 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
     };
 
     ///////////////////////////////////////////////////////////////////////////
-    // Use: 
+    // Use:
     // Create bucket
-    // 
+    //
     // bucketCreationData = {
     //      bucketKey : "bucketKey",
     //      servicesAllowed: {},
     //      policy: "temporary/transient/persistent
     // }
     //
-    // API: 
+    // API:
     // POST /oss/{apiversion}/buckets
     //
     // Response:
@@ -215,10 +215,10 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
     };
 
     ///////////////////////////////////////////////////////////////////////////
-    // Use: 
+    // Use:
     // Get bucket details
     //
-    // API: 
+    // API:
     // GET /oss/{apiversion}/buckets/{bucketkey}/details
     //
     // Response:
@@ -346,60 +346,63 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
     };
 
     ///////////////////////////////////////////////////////////////////////////
-    // Use: 
+    // Use:
     // Register an uploaded file
     //
-    // API: 
+    // API:
     // POST /viewingservice/{apiversion}/register
     //
     // Response:
     //
     // "{"Result":"Success"}"
     ///////////////////////////////////////////////////////////////////////////
-    this.register = function (fileId) {
 
-        var xhr = new XMLHttpRequest();
+    // GREGOR TOOK THIS OUT**********************************************************************************
+    // this.register = function (fileId) {
 
-        xhr.open('POST',
-            _baseUrl + '/viewingservice/v1/register',
-            false);
+    //     var xhr = new XMLHttpRequest();
 
-        xhr.setRequestHeader(
-           'Authorization',
-           'Bearer ' + gon.token);
+    //     xhr.open('POST',
+    //         _baseUrl + '/viewingservice/v1/register',
+    //         false);
 
-        xhr.setRequestHeader(
-          'Content-Type',
-          'application/json');
+    //     xhr.setRequestHeader(
+    //        'Authorization',
+    //        'Bearer ' + gon.token);
 
-        //xhr.onreadystatechange = ...;
+    //     xhr.setRequestHeader(
+    //       'Content-Type',
+    //       'application/json');
 
-        var body = {
-            urn: this.toBase64(fileId)
-        };
+    //     //xhr.onreadystatechange = ...;
 
-        try {
+    //     var body = {
+    //         urn: this.toBase64(fileId)
+    //     };
 
-            xhr.send(JSON.stringify(body));
+    //     try {
 
-            return JSON.parse(xhr.responseText);
-        }
-        catch (ex) {
-            return ex;
-        }
-    };
+    //         xhr.send(JSON.stringify(body));
+
+    //         return JSON.parse(xhr.responseText);
+    //     }
+    //     catch (ex) {
+    //         return ex;
+    //     }
+    // };
+    // TO HERE ********************************************************************************************
 
     ///////////////////////////////////////////////////////////////////////////
-    // Use: 
+    // Use:
     // Get model thumbnail
     //
-    // API: 
+    // API:
     // GET /viewingservice/{apiversion}/thumbnails/{urn}?
     //     guid=$GUID$ & width=$WIDTH$ & height=$HEIGHT$ (& type=$TYPE$)
     //
     // Response:
     //
-    // 
+    //
     ///////////////////////////////////////////////////////////////////////////
     this.getThumbnailAsync = function (
         fileId,
@@ -448,10 +451,10 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
     };
 
     ///////////////////////////////////////////////////////////////////////////
-    // Use: 
+    // Use:
     // Get model viewable
     //
-    // API: 
+    // API:
     // GET /viewingservice/{apiversion}/{urn}?guid=$GUID$
     // GET /viewingservice/{apiversion}/{urn}/status?guid=$GUID$
     // GET /viewingservice/{apiversion}/{urn}/all?guid=$GUID$
@@ -483,7 +486,7 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
     //"mime":"application/autodesk-db",
     //"role":"Autodesk.CloudPlatform.PropertyDatabase",
     //"urn":"urn:...ssdd==/output/com.autodesk.dwf/section_properties.db"}]}]}]}]}
-    // 
+    //
     ///////////////////////////////////////////////////////////////////////////
     this.getViewableAsync = function (
         fileId,

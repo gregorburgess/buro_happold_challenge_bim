@@ -1,8 +1,8 @@
   <html>
   <head>
-
-    <link rel="stylesheet" href="https://developer.api.autodesk.com/viewingservice/v1/viewers/style.css?v=v1.2.13" type="text/css">
-    <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js?v=v1.2.13"></script>
+  <%= include_gon(:init => true) %>
+    <link rel="stylesheet" href="https://developer.api.autodesk.com/viewingservice/v1/viewers/style.css?" type="text/css">
+    <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js?"></script>
     <script>
     // change the token and urn(translated file location) before you try to run
     // easiest is to go through steps on http://shiya.github.io/Intro-View-and-Data/
@@ -34,7 +34,7 @@
         alert("Load Error: " + errorMsg);
         });
     }
-    
+
     function initialize() {
         var options = {
             'document' : 'urn:' + urn,
@@ -50,7 +50,7 @@
             loadDocument(viewer, options.document);
         });
     }
-    
+
     initialize();
     </script>
 </head>
@@ -76,7 +76,7 @@
             <h4> You currently have no uploaded models. Translate and store URNs by going to <a href=<%= '/upload'%> style="text-decoration: none"> Upload </a> </h4>
         <% elsif @status == "noviewable" %>
             <h4> You currently have no viewable. Translate and store URNs by going to <a href=<%= '/upload'%> style="text-decoration: none"> Upload </a> </h4>
-        
+
         <% end %>
 </body>
 </html>

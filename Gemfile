@@ -4,6 +4,7 @@ ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0'
+gem 'gon'
 # Use sqlite3 as the database for Active Record
 gem 'thin'
 # Use SCSS for stylesheets
@@ -29,7 +30,8 @@ gem 'rails_12factor'
 gem 'curb'
 gem 'curb-fu'
 gem 'json'
-gem 'gon'
+gem 'sprockets'
+gem 'jquery-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

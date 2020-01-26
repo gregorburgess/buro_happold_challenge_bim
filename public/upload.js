@@ -93,7 +93,7 @@ function uploadFiles (bucket, files) {
                             console.log ("Viewable: ") ;
                             console.log (viewable) ;
                             $('#msg').text ('Translation was successful: ' + response.file.name + '.') ;
-                            //var fileId =oViewDataClient.fromBase64 (viewable.urn) ;
+                            // var fileId =oViewDataClient.fromBase64 (viewable.urn) ;
                             AddThisOne (viewable.urn) ;
                         }
                     ) ;
