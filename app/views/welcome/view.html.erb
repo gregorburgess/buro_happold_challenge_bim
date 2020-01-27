@@ -4,6 +4,7 @@
   <%= include_gon(:init => true)%>
     <link rel="stylesheet" href="https://developer.api.autodesk.com/viewingservice/v1/viewers/style.css?" type="text/css">
     <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js?"></script>
+    <script src="http://rendro.github.io/easy-pie-chart/javascripts/jquery.easy-pie-chart.js"></script>
     <script>
     // change the token and urn(translated file location) before you try to run
     // easiest is to go through steps on http://shiya.github.io/Intro-View-and-Data/
@@ -58,14 +59,17 @@
 <body onload="initialize();">
 
     <div id="nav-bar" class="navbar navbar-default app-navbar">
-      <div class="container-menu">
-        <div class="navbar-header">
+      <div class="container-menu"  style="width: 100%;">
+        <div class="navbar-header" style="width: 100%;">
+          <div style="display: flex; align-items: center;">
+          <div>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only"><%= image_tag 'menu_image.png', alt: '', class: 'avatar dropdown-toggle hidden-md hidden-lg', id: 'navbar-urb-menu', data: {toggle: 'dropdown'} %></span>            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="sr-only"><%= image_tag 'menu_image.png', alt: '', class: 'avatar dropdown-toggle hidden-md hidden-lg', id: 'navbar-urb-menu', data: {toggle: 'dropdown'} %></span>
           </button>
           <a class="navbar-brand trackit nomargin" href="/"><img width="160px;" src="../Autodesk_logo.png"/></a>
+          </div>
+          <div style="font-size: 45px; text-align: center; color: #e4e4e4; margin-left: -5px;">BIM</div>
+          </div>
         </div>
         <div class="navbar-nav-large navbar-collapse collapse" id="navbar-user">
           <ul class="nav navbar-nav">
@@ -81,6 +85,313 @@
       </div>
     </div>
     <div class="container">
+
+
+      <body>
+
+
+
+
+
+
+
+    <!-- GRAPHS -->
+    <div class='' style='display: flex; justify-content: center; align-content: center; flex-wrap: wrap;'>
+    <%#= link_to edit_planting_path(planting) do %>
+     <!-- <div id=<%#="planting_#{planting.item.name.gsub(/\s+/, "").downcase}_#{planting.id}"%> class="planting_chart_circle" data-percent="0%"> -->
+      <div id="metric_1" class="metric_1_class chart_circle" data-percent="0%" style="display: block">
+        <div class="inventory-circle-card" style="align-items: center">
+          <div>
+            <div>
+              <div class="item-name-info">
+                <%#= "#{planting.item.name.capitalize}"%>
+              </div>
+            </div>
+            <div class="item-name-info">
+              Enclosures
+            </div>
+            <div class="item-name-info">
+                <%#= "#{Date.parse(planting.created_at.to_s)}"%>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      <div id="metric_2" class="metric_2_class chart_circle" data-percent="0%" style="display: block">
+        <div class="inventory-circle-card" style="align-items: center">
+          <div>
+            <div>
+              <div class="item-name-info">
+                <%#= "#{planting.item.name.capitalize}"%>
+              </div>
+            </div>
+            <div class="item-name-info">
+              IFC Schema
+            </div>
+            <div class="item-name-info">
+                <%#= "#{Date.parse(planting.created_at.to_s)}"%>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      <div id="metric_3" class="metric_3_class chart_circle" data-percent="0%" style="display: block">
+        <div class="inventory-circle-card" style="align-items: center">
+          <div>
+            <div>
+              <div class="item-name-info">
+                <%#= "#{planting.item.name.capitalize}"%>
+              </div>
+            </div>
+            <div class="item-name-info">
+              Materials
+            </div>
+            <div class="item-name-info">
+                <%#= "#{Date.parse(planting.created_at.to_s)}"%>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      <div id="metric_4" class="metric_4_class chart_circle" data-percent="0%" style="display: block">
+        <div class="inventory-circle-card" style="align-items: center">
+          <div>
+            <div>
+              <div class="item-name-info">
+                <%#= "#{planting.item.name.capitalize}"%>
+              </div>
+            </div>
+            <div class="item-name-info">
+              Clashes
+            </div>
+            <div class="item-name-info">
+                <%#= "#{Date.parse(planting.created_at.to_s)}"%>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      <div id="metric_5" class="metric_5_class chart_circle" data-percent="0%" style="display: block">
+        <div class="inventory-circle-card" style="align-items: center">
+          <div>
+            <div>
+              <div class="item-name-info">
+                <%#= "#{planting.item.name.capitalize}"%>
+              </div>
+            </div>
+            <div class="item-name-info">
+               Family Names
+            </div>
+            <div class="item-name-info">
+                <%#= "#{Date.parse(planting.created_at.to_s)}"%>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div id="metric_6" class="metric_6_class chart_circle" data-percent="0%" style="display: block">
+        <div class="inventory-circle-card" style="align-items: center">
+          <div>
+            <div>
+              <div class="item-name-info">
+                <%#= "#{planting.item.name.capitalize}"%>
+              </div>
+            </div>
+            <div class="item-name-info">
+              Other Metrics
+            </div>
+            <div class="item-name-info">
+                <%#= "#{Date.parse(planting.created_at.to_s)}"%>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      </div>
+
+
+      <script>
+      $(function() {
+        $('.metric_1_class').easyPieChart({
+          // The color of the curcular bar. You can pass either a css valid color string like rgb, rgba hex or string colors. But you can also pass a function that accepts the current percentage as a value to return a dynamically generated color.
+          barColor: '#C4D500',
+          // The color of the track for the bar, false to disable rendering.
+          trackColor: '#f4f4f4',
+          // The color of the scale lines, false to disable rendering.
+          scaleColor: '#f4f4f4',
+          // Defines how the ending of the bar line looks like. Possible values are: butt, round and square.
+          lineCap: 'round',
+          // Width of the bar line in px.
+          lineWidth: 7,
+          // Size of the pie chart in px. It will always be a square.
+          size: 105,
+          // Time in milliseconds for a eased animation of the bar growing, or false to deactivate.
+          animate: 1000,
+          // Callback function that is called at the start of any animation (only if animate is not false).
+          onStart: $.noop,
+          // Callback function that is called at the end of any animation (only if animate is not false).
+          onStop: $.noop
+        });
+      });
+
+      $(function() {
+        $('.metric_2_class').easyPieChart({
+          // The color of the curcular bar. You can pass either a css valid color string like rgb, rgba hex or string colors. But you can also pass a function that accepts the current percentage as a value to return a dynamically generated color.
+          barColor: '#C4D500',
+          // The color of the track for the bar, false to disable rendering.
+          trackColor: '#f4f4f4',
+          // The color of the scale lines, false to disable rendering.
+          scaleColor: '#f4f4f4',
+          // Defines how the ending of the bar line looks like. Possible values are: butt, round and square.
+          lineCap: 'round',
+          // Width of the bar line in px.
+          lineWidth: 7,
+          // Size of the pie chart in px. It will always be a square.
+          size: 105,
+          // Time in milliseconds for a eased animation of the bar growing, or false to deactivate.
+          animate: 1000,
+          // Callback function that is called at the start of any animation (only if animate is not false).
+          onStart: $.noop,
+          // Callback function that is called at the end of any animation (only if animate is not false).
+          onStop: $.noop
+        });
+      });
+
+      $(function() {
+        $('.metric_3_class').easyPieChart({
+          // The color of the curcular bar. You can pass either a css valid color string like rgb, rgba hex or string colors. But you can also pass a function that accepts the current percentage as a value to return a dynamically generated color.
+          barColor: '#C4D500',
+          // The color of the track for the bar, false to disable rendering.
+          trackColor: '#f4f4f4',
+          // The color of the scale lines, false to disable rendering.
+          scaleColor: '#f4f4f4',
+          // Defines how the ending of the bar line looks like. Possible values are: butt, round and square.
+          lineCap: 'round',
+          // Width of the bar line in px.
+          lineWidth: 7,
+          // Size of the pie chart in px. It will always be a square.
+          size: 105,
+          // Time in milliseconds for a eased animation of the bar growing, or false to deactivate.
+          animate: 1000,
+          // Callback function that is called at the start of any animation (only if animate is not false).
+          onStart: $.noop,
+          // Callback function that is called at the end of any animation (only if animate is not false).
+          onStop: $.noop
+        });
+      });
+
+      $(function() {
+        $('.metric_4_class').easyPieChart({
+          // The color of the curcular bar. You can pass either a css valid color string like rgb, rgba hex or string colors. But you can also pass a function that accepts the current percentage as a value to return a dynamically generated color.
+          barColor: '#C4D500',
+          // The color of the track for the bar, false to disable rendering.
+          trackColor: '#f4f4f4',
+          // The color of the scale lines, false to disable rendering.
+          scaleColor: '#f4f4f4',
+          // Defines how the ending of the bar line looks like. Possible values are: butt, round and square.
+          lineCap: 'round',
+          // Width of the bar line in px.
+          lineWidth: 7,
+          // Size of the pie chart in px. It will always be a square.
+          size: 105,
+          // Time in milliseconds for a eased animation of the bar growing, or false to deactivate.
+          animate: 1000,
+          // Callback function that is called at the start of any animation (only if animate is not false).
+          onStart: $.noop,
+          // Callback function that is called at the end of any animation (only if animate is not false).
+          onStop: $.noop
+        });
+      });
+
+      $(function() {
+        $('.metric_5_class').easyPieChart({
+          // The color of the curcular bar. You can pass either a css valid color string like rgb, rgba hex or string colors. But you can also pass a function that accepts the current percentage as a value to return a dynamically generated color.
+          barColor: '#C4D500',
+          // The color of the track for the bar, false to disable rendering.
+          trackColor: '#f4f4f4',
+          // The color of the scale lines, false to disable rendering.
+          scaleColor: '#f4f4f4',
+          // Defines how the ending of the bar line looks like. Possible values are: butt, round and square.
+          lineCap: 'round',
+          // Width of the bar line in px.
+          lineWidth: 7,
+          // Size of the pie chart in px. It will always be a square.
+          size: 105,
+          // Time in milliseconds for a eased animation of the bar growing, or false to deactivate.
+          animate: 1000,
+          // Callback function that is called at the start of any animation (only if animate is not false).
+          onStart: $.noop,
+          // Callback function that is called at the end of any animation (only if animate is not false).
+          onStop: $.noop
+        });
+      });
+
+      $(function() {
+        $('.metric_6_class').easyPieChart({
+          // The color of the curcular bar. You can pass either a css valid color string like rgb, rgba hex or string colors. But you can also pass a function that accepts the current percentage as a value to return a dynamically generated color.
+          barColor: '#C4D500',
+          // The color of the track for the bar, false to disable rendering.
+          trackColor: '#f4f4f4',
+          // The color of the scale lines, false to disable rendering.
+          scaleColor: '#f4f4f4',
+          // Defines how the ending of the bar line looks like. Possible values are: butt, round and square.
+          lineCap: 'round',
+          // Width of the bar line in px.
+          lineWidth: 7,
+          // Size of the pie chart in px. It will always be a square.
+          size: 105,
+          // Time in milliseconds for a eased animation of the bar growing, or false to deactivate.
+          animate: 1000,
+          // Callback function that is called at the start of any animation (only if animate is not false).
+          onStart: $.noop,
+          // Callback function that is called at the end of any animation (only if animate is not false).
+          onStop: $.noop
+        });
+      });
+
+      let ratio_of_data_for_metric_1 = (60/100);
+      let percentage_for_metric_1 = `${Math.trunc((ratio_of_data_for_metric_1  * 100))}%`
+
+      let ratio_of_data_for_metric_2 = (100/100);
+      let percentage_for_metric_2 = `${Math.trunc((ratio_of_data_for_metric_2  * 100))}%`
+
+      let ratio_of_data_for_metric_3 = (30/100);
+      let percentage_for_metric_3 = `${Math.trunc((ratio_of_data_for_metric_3  * 100))}%`
+
+      let ratio_of_data_for_metric_4 = (90/100);
+      let percentage_for_metric_4 = `${Math.trunc((ratio_of_data_for_metric_4  * 100))}%`
+
+      let ratio_of_data_for_metric_5 = (80/100);
+      let percentage_for_metric_5 = `${Math.trunc((ratio_of_data_for_metric_5  * 100))}%`
+
+      let ratio_of_data_for_metric_6 = (95/100);
+      let percentage_for_metric_6 = `${Math.trunc((ratio_of_data_for_metric_6  * 100))}%`
+
+      document.getElementById("metric_1").setAttribute("data-percent", percentage_for_metric_1);
+
+      document.getElementById("metric_2").setAttribute("data-percent", percentage_for_metric_2);
+
+      document.getElementById("metric_3").setAttribute("data-percent", percentage_for_metric_3);
+
+      document.getElementById("metric_4").setAttribute("data-percent", percentage_for_metric_4);
+
+      document.getElementById("metric_5").setAttribute("data-percent", percentage_for_metric_5);
+
+      document.getElementById("metric_6").setAttribute("data-percent", percentage_for_metric_6);
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <% if @status == "noview" %>
 	  	<h4> Please select a user for a viewable! <a href=<%= '/home'%> style="text-decoration: none"> Go back Home </a> </h4>

@@ -12,15 +12,12 @@
 </head>
 
 
-<body>
-<% if !@user.judge %>
+<%# if !@user.judge %>
     <div id="nav-bar" class="navbar navbar-default app-navbar">
       <div class="container-menu">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only"><%= image_tag 'menu_image.png', alt: '', class: 'avatar dropdown-toggle hidden-md hidden-lg', id: 'navbar-urb-menu', data: {toggle: 'dropdown'} %></span>            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="sr-only"><%= image_tag 'menu_image.png', alt: '', class: 'avatar dropdown-toggle hidden-md hidden-lg', id: 'navbar-urb-menu', data: {toggle: 'dropdown'} %></span>
           </button>
           <a class="navbar-brand trackit nomargin" href="/"><img width="160px;" src="../Autodesk_logo.png"/></a>
         </div>
@@ -45,11 +42,11 @@
 
             </div>
             <div class="panel-body">
-                <input class="form-control" type="file" id="files" name="files" multiple />
+                <input class="form-control" type="file" id="files" name="files" multiple style="height: 40px;"/>
 
                 <br />
                 <div style="text-align: center; display: flex; justify-content: flex-end;">
-                    <a class="btn btn-primary" id="btnTranslateThisOne" style="background-color: #C4D500; color: white; border: none;">Upload & Translate</a>
+                    <a class="btn btn-primary" id="btnTranslateThisOne" style="background-color: #C4D500; color: white; border: none; font-size: 1rem !important;">Upload & Translate</a>
                 </div>
 
                 <br />
@@ -81,13 +78,13 @@
             <div class="panel-body">
             	<%= form_for @mod, url: {action: "create", controller: "mods"}, html: {class: "nifty_form"} do |f| %>
             	<p><%= f.label :title %><br>
-    			<%= f.text_field :title %></p>
+    			<%= f.text_field :title, style: "height: 40px !important;"%></p>
     			<p><%= f.label :urn %><br>
-    			<%= f.text_field :urn %></p>
+    			<%= f.text_field :urn, style: "height: 40px;"%></p>
             	<%= f.check_box :latest %> Make this the viewable on your home page <br><br>
                 <%= f.hidden_field :uid , :value => @user.id %>
-              <div style="display: flex; justify-content: flex-end; ">
-            	<%= f.submit "Add to my Models", style: "text-align: center; display: flex; justify-content: center; background-color: #C4D500; color: white !important; border: none; width: 161px; height: 36px; padding-left: 12px; padding-right: 12px; border-radius: 3px; font-size: 1rem;"%><br>
+              <div style="display: flex; justify-content: flex-end;">
+            	<%= f.submit "Add to my Models", style: "text-align: center; display: flex; justify-content: center; background-color: #C4D500; color: white !important; border: none; width: 161px !important; height: 36px; padding-left: 12px; padding-right: 12px; border-radius: 3px; font-size: 1rem;"%><br>
               </div>
 
             	<% end %>
@@ -96,6 +93,6 @@
     </div>
     </div>
 </div>
-<% end %>
+<%# end %>
 </body>
 </html>

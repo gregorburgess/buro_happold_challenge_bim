@@ -10,22 +10,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+
  *= require_self
  */
 
 /*Graphical variables*/
-@import "fonts";
-@import "colors";
-@import "radii";
-@import "lines_and_borders";
-@import "text_colors_and_styles";
-@import "bootstrap_variables";
-@import "utilities";
-@import "heightsandwidths";
-@import "links";
-@import "touch";
-@import "full_screen";
+/*@import "config/fonts";
+@import "config/colors";
+@import "config/radii";
+@import "config/lines_and_borders";
+@import "config/text_colors_and_styles";
+@import "config/bootstrap_variables";
+@import "config/utilities";
+@import "config/heightsandwidths";
+@import "config/links";
+@import "config/touch";*/
+
 
 .sr-only {
   position: relative;
@@ -62,10 +62,116 @@ a {
 }
 .navbar-toggle {
 border: none;
-margin-bottom: 15px;
+margin-left: -5px;
+background-color: white;
 }
 .navbar-toggle:focus {
 outline: none;
+}
+
+
+.form-control{
+  display: flex !important;
+  box-shadow: none !important;
+  border: 1px solid white !important;
+  background-color: #f4f4f4 !important;
+  align-items: center !important;
+  padding:5px 15px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 21px !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  width: 100% !important;
+}
+
+ input {
+  display: flex !important;
+  box-shadow: none !important;
+  border: none !important;
+  /*border: 1px solid gray !important;*/
+  border-radius: 3px !important;
+  background-color: #f4f4f4 !important;
+  align-items: center !important;
+  padding:5px 10px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 21px !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  width: 100% !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+     outline: none;
+}
+
+
+input[type=checkbox] {
+  margin-top: 5px;
+}
+
+input[type="submit"] {
+ background-color: #C4D500 !important;
+ color: white !important;
+}
+
+
+
+.new_user {
+  width: 50vw !important;
+  max-width: 300px !important;
+}
+
+
+
+/*// CIRCLE TIME CHART ENCIRCLING PLANTING IMAGES ON ALL PLANTINGS PAGE
+// NOTE THESE REPRESENT ALL THE STATES, THE SAME INTIALLY (THAT COULD CHANGE), SO IF YOU CHANGE ONE, CHANGE THEM ALL, COLORS ARE CONTROLLED IN THE JS my_easy_pie_chats.js
+*/
+.chart_circle {
+position:relative;
+width: 110px;
+height: 110px;
+display: inline-block;
+text-align: center;
+canvas {
+position: absolute;
+top: -14px;
+left: 3px;
+width: 110px;
+height: 110px;
+}
+}
+
+
+.inventory-circle-card {
+  display: flex;
+  height: 75px;
+  width: 75px;
+  font-size: 10px;
+/*  text-shadow: 0 1px 3px rgba(0,0,0,0.6);*/
+
+  text-align: center;
+  align-items: center;;
+  justify-content: center;
+
+/*  background-size: cover !important;*/
+  background-position: center;
+/*  background-color: #e8e8e8;*/
+  color: black;
+  border-radius: 100px;
+  margin-bottom: 18px;
+  margin-left: 18px;
 }
 
 

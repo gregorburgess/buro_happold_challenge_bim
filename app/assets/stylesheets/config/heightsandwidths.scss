@@ -1,0 +1,274 @@
+  // Form fields
+
+  $input-field-height: 45px;
+  $input-field-text-area-height: 250px;
+
+  // Buttons
+  $button-height: 35px;
+
+  // Graphs (**note: horizontal, so height = widths of the bar)
+  $bar-height: 45px;
+
+
+
+/*OVERRIDES*/
+
+.form-control{
+  display: flex !important;
+  box-shadow: none !important;
+  border: none !important;
+  align-items: center !important;
+  padding:5px 15px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 21px !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+.form-control:focus {
+  border-color: white;
+  box-shadow: none;
+}
+
+#query {
+  margin-bottom:5px;
+}
+
+// Form Label Styling
+label {
+  color: $dark-gray;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: lighter;
+  padding: 5px 0px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+input, textarea, button {outline: none; }
+
+// General Form Input Field Styling
+input {
+ height: $input-field-height !important;
+ border-radius: $input-field-radii !important;
+}
+
+.btn {
+ // height: $button-height !important;
+ border-radius: $button-radii !important;
+}
+
+ input[type=numeric] {
+  -webkit-appearance: none !important;
+ }
+
+ input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+input[type=radio]:checked + label{
+  color: lighten($white,60%);
+  background: $rice-paddy-green !important;
+}
+
+
+input[type="checkbox"]:checked {
+  background-color: $rice-paddy-green !important;
+  #basket_sale_type_subscription {
+  background-color: $rice-paddy-green!important;
+}
+}
+
+// Form Select Box Styling
+select {
+-webkit-appearance: none !important;
+border-top-left-radius: $input-field-radii !important;
+border-bottom-left-radius: $input-field-radii !important;
+border-top-right-radius: $input-field-radii !important;
+border-bottom-right-radius: $input-field-radii !important;
+height: $input-field-height !important;
+.with-right-button{
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+}
+
+textarea {
+  min-height: $input-field-text-area-height !important;
+  resize: auto !important;
+  resize: none !important;
+  border-radius: $input-field-text-area-radii !important;
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  white-space: normal !important;
+  // overflow: visible;
+}
+
+// Form Text-Area Styling Styling
+
+.form-text {
+  font-family: "Helvetica";
+  font-weight: lighter;
+}
+
+.text-muted{
+ color: $orange;
+font-size: 15px !important;
+font-style: normal !important;
+font-weight: 400 !important;
+}
+
+.invalid-feedback
+{
+  color: $orange;
+  font-size: 15px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+.form-control-label {
+  font-family: "Helvetica";
+  font-weight: lighter;
+}
+
+.radio-label{
+  color: #999999;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: lighter;
+  padding: 5px 20px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.grid-cell {
+  font-family: "Helvetica";
+  font-weight: lighter;
+  color: $black !important;
+}
+
+.form-check-label {
+  font-family: "Helvetica";
+  font-weight: lighter;
+  line-height: 32px
+}
+
+// Overide Devise additional link elements styling  with URB styling (I had to add our ouwn class to the Devise links HTML)
+
+.urb-a-tag {
+  font-family: "Helvetica";
+  font-weight: lighter;
+  font-size: 14px;
+  margin: 10px 0px 10px 0px;
+  line-height: 10px;
+}
+
+.form-actions {
+  text-align:right !important;
+}
+
+.form-actions .btn{
+  color: $white;
+  border-radius: 3px !important;
+  text-decoration: none;
+  font-weight: lighter;
+  font-size: 16px;
+  // border: 1px solid $white;
+  border: none !important;
+  padding: 5px 15px;
+  background-color: $rice-paddy-green;
+  min-width:100px;
+}
+
+.form-actions .btn:hover {
+  background-color: $hover-green;
+  color: $white;
+}
+
+.devise_bottom_form_links_area {
+  text-align:right !important;
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+
+.radio-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Can't get .collection_radio_buttons to work - this is for styling the dropoff plans radio buttons
+.collection_radio_buttons {
+  border-radius: 500px !important;
+  height: 40px;
+  padding: 10px;
+  min-width: 100px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 28px;
+  border: none !important;
+  background: $white;
+  font-size: 12px;
+  line-height: 20px !important;
+}
+
+label + input[type=radio] + label {
+  border-left: 1px solid $white;
+}
+.radio-group {
+  border: none !important;
+  display: inline-block;
+  border-radius: $button-form-radii;
+  overflow: hidden;
+}
+
+.input-group-addon {
+  border: none !important;
+  color: $white;
+  border-radius: $button-form-radii;
+  text-decoration: none;
+  font-weight: lighter;
+  font-size: 16px;
+  border: none !important;
+  padding: 5px 15px;
+  background-color: $rice-paddy-green;
+}
+
+// ****** Form for baskets overides
+
+.col-form-label {
+
+  font-family: "Helvetica";
+  font-weight: 100 !important;
+  line-height: 26px !important;
+  color: #999999 !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+}
+
+
+.check_boxes {
+  margin-top: -1px !important;
+  }
+
+  legend {
+    .col-form-label {
+      margin-top: 50px !important;
+    }
+  }
+
+.form-group{
+  .form-check {
+    display: flex !important;
+    .form-check-input{
+      margin-right: 15px !important;
+    }
+  }
+}

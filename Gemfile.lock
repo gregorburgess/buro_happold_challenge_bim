@@ -72,6 +72,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    easypiechart (0.1.0)
     erubis (2.7.0)
     eventmachine (1.2.7)
     execjs (2.7.0)
@@ -225,6 +226,7 @@ DEPENDENCIES
   curb
   curb-fu
   devise (>= 3.0)
+  easypiechart
   gon
   jbuilder (~> 2.0)
   jquery-rails

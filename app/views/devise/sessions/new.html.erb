@@ -3,9 +3,7 @@
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only"><%= image_tag 'menu_image.png', alt: '', class: 'avatar dropdown-toggle hidden-md hidden-lg', id: 'navbar-urb-menu', data: {toggle: 'dropdown'} %></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+
           </button>
           <a class="navbar-brand trackit nomargin" href="/"><img width="160px;" src="../Autodesk_logo.png"/></a>
         </div>
@@ -20,31 +18,40 @@
       </div>
     </div>
     <div class="container">
-<h2>Log in</h2>
+      <div style="display: flex; justify-content: center; width: 100%;">
+       <h3>BIM CHECKER</h3>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+      <div style="display: flex; justify-content: center;  width: 100%;">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field" style="width: 100% !important;">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+      <div style="width: 50vw; max-width: 300px;">
+          <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+         <% end -%>
+
+        <div class="actions" style="display: flex; justify-content: center; text-align: center;">
+          <%= f.submit "Log in", style:"display: flex; justify-content: center;"%>
+        </div>
+        <% end %>
+        <br>
+        <div style="text-align: right; font-size: 14px;">
+        <%= render "devise/shared/links" %>
+        </div>
+      </div>
+      </div>
+
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-<br>
-
-<%= render "devise/shared/links" %>
-</div>

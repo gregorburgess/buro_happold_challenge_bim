@@ -381,21 +381,21 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
                                     //     console.log('No STEP translation found');
                                     // }
 
-    this.register = function (fileId) {
+    // this.register = function (fileId) {
 
-        var xhr = new XMLHttpRequest();
+        // var xhr = new XMLHttpRequest();
 
-        xhr.open('POST',
-            _baseUrl + '/viewingservice/v1/register',
-            false);
+        // xhr.open('POST',
+        //     _baseUrl + '/viewingservice/v1/register',
+        //     false);
 
-        xhr.setRequestHeader(
-           'Authorization',
-           'Bearer ' + gon.token);
+        // xhr.setRequestHeader(
+        //    'Authorization',
+        //    'Bearer ' + gon.token);
 
-        xhr.setRequestHeader(
-          'Content-Type',
-          'application/json');
+        // xhr.setRequestHeader(
+        //   'Content-Type',
+        //   'application/json');
 
         //xhr.onreadystatechange = ...;
 
@@ -403,16 +403,18 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
             urn: this.toBase64(fileId)
         };
 
-        try {
+        console.log(body);
 
-            xhr.send(JSON.stringify(body));
+        // try {
 
-            return JSON.parse(xhr.responseText);
-        }
-        catch (ex) {
-            return ex;
-        }
-    };
+        //     xhr.send(JSON.stringify(body));
+
+        //     return JSON.parse(xhr.responseText);
+        // }
+        // catch (ex) {
+        //     return ex;
+        // }
+    // };
     // TO HERE ********************************************************************************************
 
     ///////////////////////////////////////////////////////////////////////////

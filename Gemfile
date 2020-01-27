@@ -34,6 +34,7 @@ gem 'sprockets'
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'popper'
+gem 'easypiechart'
 
 
 # Use ActiveModel has_secure_password
