@@ -358,38 +358,61 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
     ///////////////////////////////////////////////////////////////////////////
 
     // GREGOR TOOK THIS OUT**********************************************************************************
-    // this.register = function (fileId) {
 
-    //     var xhr = new XMLHttpRequest();
+                                    // url = 'https://developer.api.autodesk.com/modelderivative/v2/designdata/:urn/manifest'
+                                    // responseBody = open(url).read
 
-    //     xhr.open('POST',
-    //         _baseUrl + '/viewingservice/v1/register',
-    //         false);
+                                    // var jsonData = JSON.parse(responseBody);
 
-    //     xhr.setRequestHeader(
-    //        'Authorization',
-    //        'Bearer ' + gon.token);
+                                    // var gotIt = false;
+                                    // for (var derId in jsonData.derivatives) {
+                                    //     var der = jsonData.derivatives[derId];
+                                    //     if (der.objectType === 'step') {
+                                    //         gotIt = true;
+                                    //     }
+                                    // }
 
-    //     xhr.setRequestHeader(
-    //       'Content-Type',
-    //       'application/json');
+                                    // if (!gotIt) {
+                                    //     postman.setNextRequest("GetManifest");
+                                    // }
 
-    //     //xhr.onreadystatechange = ...;
+                                    // if (jsonData.status === 'failed') {
+                                    //     tests["Translation failed"] = false;
+                                    //     console.log('No STEP translation found');
+                                    // }
 
-    //     var body = {
-    //         urn: this.toBase64(fileId)
-    //     };
+    this.register = function (fileId) {
 
-    //     try {
+        var xhr = new XMLHttpRequest();
 
-    //         xhr.send(JSON.stringify(body));
+        xhr.open('POST',
+            _baseUrl + '/viewingservice/v1/register',
+            false);
 
-    //         return JSON.parse(xhr.responseText);
-    //     }
-    //     catch (ex) {
-    //         return ex;
-    //     }
-    // };
+        xhr.setRequestHeader(
+           'Authorization',
+           'Bearer ' + gon.token);
+
+        xhr.setRequestHeader(
+          'Content-Type',
+          'application/json');
+
+        //xhr.onreadystatechange = ...;
+
+        var body = {
+            urn: this.toBase64(fileId)
+        };
+
+        try {
+
+            xhr.send(JSON.stringify(body));
+
+            return JSON.parse(xhr.responseText);
+        }
+        catch (ex) {
+            return ex;
+        }
+    };
     // TO HERE ********************************************************************************************
 
     ///////////////////////////////////////////////////////////////////////////

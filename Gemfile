@@ -32,6 +32,9 @@ gem 'curb-fu'
 gem 'json'
 gem 'sprockets'
 gem 'jquery-rails'
+gem 'bootstrap'
+gem 'popper'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

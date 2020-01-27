@@ -1,0 +1,73 @@
+.center-justified-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-right-and-left-spaced-between {
+  display:flex;
+  justify-content: space-between;
+}
+
+.text-spaced-between {
+  display:flex;
+  justify-content: space-between;
+}
+
+
+
+.center-items-vertically {
+  display: flex;
+  align-items: center;
+}
+
+.divider-line {
+ border-bottom: 1px solid $dark-gray;
+ padding-right: 30px;
+ padding-left: 30px
+}
+
+.vertical-spacer-30 {
+ padding-top: 15px;
+ padding-bottom: 15px;
+}
+
+.vertical-spacer-20 {
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+.vertical-spacer-10 {
+ padding-top: 5px;
+ padding-bottom: 5px;
+}
+
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+.margin-right-15 {
+  margin-right: 15px;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+.margin-left-5 {
+  margin-left: 5px;
+}
+
+.margin-right-5 {
+  margin-right: 5px;
+}
+
+
