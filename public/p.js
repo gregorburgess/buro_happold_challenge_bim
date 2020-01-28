@@ -357,45 +357,23 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
     // "{"Result":"Success"}"
     ///////////////////////////////////////////////////////////////////////////
 
-    // GREGOR TOOK THIS OUT**********************************************************************************
+// ERROR HAPPENING HERE **********************************************************************************
 
-                                    // url = 'https://developer.api.autodesk.com/modelderivative/v2/designdata/:urn/manifest'
-                                    // responseBody = open(url).read
+    this.register = function (fileId) {
 
-                                    // var jsonData = JSON.parse(responseBody);
+        var xhr = new XMLHttpRequest();
 
-                                    // var gotIt = false;
-                                    // for (var derId in jsonData.derivatives) {
-                                    //     var der = jsonData.derivatives[derId];
-                                    //     if (der.objectType === 'step') {
-                                    //         gotIt = true;
-                                    //     }
-                                    // }
+        xhr.open('POST',
+            _baseUrl + '/viewingservice/v1/register',
+            false);
 
-                                    // if (!gotIt) {
-                                    //     postman.setNextRequest("GetManifest");
-                                    // }
+        xhr.setRequestHeader(
+           'Authorization',
+           'Bearer ' + gon.token);
 
-                                    // if (jsonData.status === 'failed') {
-                                    //     tests["Translation failed"] = false;
-                                    //     console.log('No STEP translation found');
-                                    // }
-
-    // this.register = function (fileId) {
-
-        // var xhr = new XMLHttpRequest();
-
-        // xhr.open('POST',
-        //     _baseUrl + '/viewingservice/v1/register',
-        //     false);
-
-        // xhr.setRequestHeader(
-        //    'Authorization',
-        //    'Bearer ' + gon.token);
-
-        // xhr.setRequestHeader(
-        //   'Content-Type',
-        //   'application/json');
+        xhr.setRequestHeader(
+          'Content-Type',
+          'application/json');
 
         //xhr.onreadystatechange = ...;
 
@@ -403,19 +381,17 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
             urn: this.toBase64(fileId)
         };
 
-        console.log(body);
+        try {
 
-        // try {
+            xhr.send(JSON.stringify(body));
 
-        //     xhr.send(JSON.stringify(body));
-
-        //     return JSON.parse(xhr.responseText);
-        // }
-        // catch (ex) {
-        //     return ex;
-        // }
-    // };
-    // TO HERE ********************************************************************************************
+            return JSON.parse(xhr.responseText);
+        }
+        catch (ex) {
+            return ex;
+        }
+    };
+// TO HERE ********************************************************************************************
 
     ///////////////////////////////////////////////////////////////////////////
     // Use:
