@@ -383,32 +383,35 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
         //xhr.onreadystatechange = ...;
         console.log("Console Log #1: " + this.toBase64(fileId));
         let str = this.toBase64(fileId)
-        str = str.replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '');
+        let urn = str.replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '');
+        let urn_field = document.querySelector("#mod_urn");
+        urn_field.value = urn
 
-        const body = {
+        // var body = {
+        //   urn: str
+        // };
+        let body = {
           "input": {
-            "urn": str
+            "urn": urn
           },
           "output": {
             "formats": [
               {
-                "type": "obj",
+                "type": "svf",
                 "views": [
-                  "2d"
-                  // ,
-                  // "3d"
+                  "3d"
                 ]
               }
             ]
           }
-        };
+        }
 
         // console.log(JSON.stringify(body));
         console.log("Console Log #2: ", body);
         console.log("Console Log #3: ",  JSON.stringify(body));
 
         try {
-            //xhr.send(body);
+             // xhr.send(body);
             xhr.send(JSON.stringify(body));
 
             return JSON.parse(xhr.responseText);
@@ -416,7 +419,9 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
         catch (ex) {
             return ex;
         }
+
     };
+
 // TO HERE ********************************************************************************************
 
     ///////////////////////////////////////////////////////////////////////////

@@ -35,6 +35,7 @@ gem 'jquery-rails'
 gem 'bootstrap'
 gem 'popper'
 gem 'easypiechart'
+gem 'figaro'
 
 
 # Use ActiveModel has_secure_password

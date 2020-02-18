@@ -42,12 +42,12 @@
 
   <!-- <div class="field"> -->
     <%#= f.label :key %>
-    <%= f.hidden_field :key, value: "Ch4V8AtnmbJy3lMhatY9RDYqJQAhwDKv" %>
+    <%= f.hidden_field :key, value: ENV["client_id"] %>
   <!-- </div> -->
 
   <!-- <div class="field"> -->
     <%#= f.label :secret %>
-    <%= f.hidden_field :secret, value: "PSXGB24EVKVLxdD8" %>
+    <%= f.hidden_field :secret, value: ENV["client_secret"] %>
   <!-- </div> -->
 
   <div class="field">
