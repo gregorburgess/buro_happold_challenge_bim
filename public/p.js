@@ -273,6 +273,7 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
         }
     };
 
+
     ///////////////////////////////////////////////////////////////////////////
     // Use:
     // Upload a file to bucket
@@ -360,12 +361,16 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
 // ERROR HAPPENING HERE **********************************************************************************
 
     this.register = function (fileId) {
+      console.log("==", fileId);
 
         var xhr = new XMLHttpRequest();
 
         xhr.open('POST',
-            _baseUrl + '/viewingservice/v1/register',
+            // _baseUrl + '/viewingservice/v1/register',
+            // false);
+            'https://developer.api.autodesk.com/modelderivative/v2/designdata/job',
             false);
+
 
         xhr.setRequestHeader(
            'Authorization',
@@ -376,13 +381,34 @@ Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient = function (
           'application/json');
 
         //xhr.onreadystatechange = ...;
+        console.log("Console Log #1: " + this.toBase64(fileId));
+        let str = this.toBase64(fileId)
+        str = str.replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '');
 
-        var body = {
-            urn: this.toBase64(fileId)
+        const body = {
+          "input": {
+            "urn": str
+          },
+          "output": {
+            "formats": [
+              {
+                "type": "obj",
+                "views": [
+                  "2d"
+                  // ,
+                  // "3d"
+                ]
+              }
+            ]
+          }
         };
 
-        try {
+        // console.log(JSON.stringify(body));
+        console.log("Console Log #2: ", body);
+        console.log("Console Log #3: ",  JSON.stringify(body));
 
+        try {
+            //xhr.send(body);
             xhr.send(JSON.stringify(body));
 
             return JSON.parse(xhr.responseText);

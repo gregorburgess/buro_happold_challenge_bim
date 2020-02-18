@@ -1,0 +1,191 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+/*Graphical variables*/
+/*@import "config/fonts";
+@import "config/colors";
+@import "config/radii";
+@import "config/lines_and_borders";
+@import "config/text_colors_and_styles";
+@import "config/bootstrap_variables";
+@import "config/utilities";
+@import "config/heightsandwidths";
+@import "config/links";
+@import "config/touch";*/
+/* line 31, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.sr-only {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  padding-left: 0px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* line 42, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+a {
+  color: #C4D500;
+}
+
+/* line 46, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.container-menu {
+  padding-left: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+/* line 52, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.dropdown-toggle {
+  height: 40px;
+  pointer-events: none;
+  border: none;
+}
+
+/* line 57, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.dropdown-toggle:focus {
+  outline: none;
+}
+
+/* line 61, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.btn:focus {
+  outline: none;
+}
+
+/* line 64, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.navbar-toggle {
+  border: none;
+  margin-left: -5px;
+  background-color: white;
+}
+
+/* line 69, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.navbar-toggle:focus {
+  outline: none;
+}
+
+/* line 74, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.form-control {
+  display: -webkit-box !important;
+  display: flex !important;
+  box-shadow: none !important;
+  border: 1px solid white !important;
+  background-color: #f4f4f4 !important;
+  -webkit-box-align: center !important;
+          align-items: center !important;
+  padding: 5px 15px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 21px !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  width: 100% !important;
+}
+
+/* line 92, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+input {
+  display: -webkit-box !important;
+  display: flex !important;
+  box-shadow: none !important;
+  border: none !important;
+  /*border: 1px solid gray !important;*/
+  border-radius: 3px !important;
+  background-color: #f4f4f4 !important;
+  -webkit-box-align: center !important;
+          align-items: center !important;
+  padding: 5px 10px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 21px !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  width: 100% !important;
+}
+
+/* line 112, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  outline: none;
+}
+
+/* line 121, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+input[type=checkbox] {
+  margin-top: 5px;
+}
+
+/* line 125, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+input[type="submit"] {
+  background-color: #C4D500 !important;
+  color: white !important;
+}
+
+/* line 132, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.new_user {
+  width: 50vw !important;
+  max-width: 300px !important;
+}
+
+/*// CIRCLE TIME CHART ENCIRCLING PLANTING IMAGES ON ALL PLANTINGS PAGE
+// NOTE THESE REPRESENT ALL THE STATES, THE SAME INTIALLY (THAT COULD CHANGE), SO IF YOU CHANGE ONE, CHANGE THEM ALL, COLORS ARE CONTROLLED IN THE JS my_easy_pie_chats.js
+*/
+/* line 142, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.chart_circle {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  display: inline-block;
+  text-align: center;
+}
+/* line 148, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.chart_circle canvas {
+  position: absolute;
+  top: -14px;
+  left: 3px;
+  width: 110px;
+  height: 110px;
+}
+
+/* line 158, /Users/gregoryburgess/code/gregorburgess/buro_happold_challenge_bim/app/assets/stylesheets/application.scss */
+.inventory-circle-card {
+  display: -webkit-box;
+  display: flex;
+  height: 75px;
+  width: 75px;
+  font-size: 10px;
+  /*  text-shadow: 0 1px 3px rgba(0,0,0,0.6);*/
+  text-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  /*  background-size: cover !important;*/
+  background-position: center;
+  /*  background-color: #e8e8e8;*/
+  color: black;
+  border-radius: 100px;
+  margin-bottom: 18px;
+  margin-left: 18px;
+}
