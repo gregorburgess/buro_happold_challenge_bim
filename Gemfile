@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.5.7'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -31,7 +31,6 @@ gem 'curb'
 gem 'curb-fu'
 gem 'json'
 gem 'sprockets'
-gem 'jquery-rails'
 gem 'bootstrap'
 gem 'popper'
 gem 'easypiechart'
