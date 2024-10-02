@@ -28,7 +28,7 @@ gem 'devise', '>= 3.0'
 gem 'pg', '~> 0.21'
 gem 'rails_12factor'
 gem 'curb'
-gem 'curb-fu'
+gem 'curb-fu', path: '../curb-fu'
 gem 'json'
 gem 'sprockets'
 gem 'bootstrap'
@@ -36,6 +36,7 @@ gem 'popper'
 gem 'easypiechart'
 gem 'figaro'
 gem 'bundler', '>= 2.0.0'
+gem 'sassc-rails', '~> 2.1'
 
 
 # Use ActiveModel has_secure_password
